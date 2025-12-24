@@ -1,0 +1,59 @@
+{
+  "company": "Slack",
+  "source": "all",
+  "start_date": "2023-01-01",
+  "end_date": "2023-12-31",
+  "sources": {
+    "G2": {
+      "total_reviews": 2,
+      "reviews": [
+        {
+          "title": "Great communication tool for teams",
+          "description": "Slack has revolutionized how our team communicates. The integration with other tools is seamless and the interface is very user-friendly. Our team productivity has increased significantly since we implemented Slack.",
+          "date": "2023-06-15",
+          "rating": 4.5,
+          "reviewer_name": "John Smith",
+          "source": "G2",
+          "url": "https://www.g2.com/products/slack/reviews"
+        },
+        {
+          "title": "Expensive but worth it",
+          "description": "The pricing is a bit high, but the value it brings to team collaboration makes up for it. Highly recommended for companies looking to improve internal communication.",
+          "date": "2023-07-20",
+          "rating": 4.0,
+          "reviewer_name": "Sarah Johnson",
+          "source": "G2",
+          "url": "https://www.g2.com/products/slack/reviews"
+        }
+      ]
+    },
+    "Capterra": {
+      "total_reviews": 1,
+      "reviews": [
+        {
+          "title": "Best team chat solution",
+          "description": "Slack is the industry standard for a reason. Excellent customer support and constant updates. The mobile app is particularly impressive.",
+          "date": "2023-05-10",
+          "rating": 4.8,
+          "reviewer_name": "Mike Davis",
+          "source": "Capterra",
+          "url": "https://www.capterra.com/p/127896/Slack/"
+        }
+      ]
+    },
+    "Trustpilot": {
+      "total_reviews": 1,
+      "reviews": [
+        {
+          "title": "Transformed our workflow",
+          "description": "Since implementing Slack, our team productivity has increased by 40%. The bot ecosystem is particularly impressive and allows for extensive automation.",
+          "date": "2023-08-05",
+          "rating": 5.0,
+          "reviewer_name": "Emily Brown",
+          "source": "Trustpilot",
+          "url": "https://www.trustpilot.com/review/slack.com"
+        }
+      ]
+    }
+  }
+}
