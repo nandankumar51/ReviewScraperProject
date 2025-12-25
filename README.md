@@ -55,28 +55,6 @@ python main.py --company "Slack" --start-date 2023-01-01 --end-date 2023-12-31 -
 - `--source` (optional): Review source - Options: `g2`, `capterra`, `trustpilot`, `all` (default: `all`)
 - `--output` (optional): Output file path (default: `output/reviews.json`)
 
-### Examples
-
-**Scrape Slack reviews from G2 only**:
-```bash
-python main.py --company "Slack" --start-date 2023-01-01 --end-date 2023-12-31 --source g2
-```
-
-**Scrape Monday.com reviews from all sources**:
-```bash
-python main.py --company "Monday" --start-date 2023-06-01 --end-date 2023-12-31 --source all
-```
-
-**Scrape Salesforce reviews from Trustpilot with custom output file**:
-```bash
-python main.py --company "Salesforce" --start-date 2023-01-01 --end-date 2023-06-30 --source trustpilot --output my_reviews.json
-```
-
-**Scrape Notion reviews from Capterra**:
-```bash
-python main.py --company "Notion" --start-date 2023-03-15 --end-date 2023-09-20 --source capterra
-```
-
 ## 📊 Output Format
 
 The script generates a JSON file with the following structure:
@@ -172,13 +150,6 @@ The script includes comprehensive error handling for:
 - **Parsing errors**: Continues scraping even if individual reviews fail to parse
 - **Invalid sources**: Validates source parameter against allowed options
 
-### Example Error Messages
-
-```
-[ERROR] Date format error: Please use YYYY-MM-DD format
-[ERROR] Start date must be before end date
-[ERROR] Source must be one of: g2, capterra, trustpilot, all
-```
 
 ## 🎁 Bonus: Third Source Integration (Trustpilot)
 
@@ -207,97 +178,4 @@ A sample output file is included at `output/sample_output.json`. This demonstrat
 To generate fresh sample data:
 ```bash
 python sample_data.py
-```
-
-## ⚡ Performance Considerations
-
-- **Request delays**: The script includes 2-second delays between requests to be respectful to target servers
-- **Pagination limits**: Limited to 100 reviews per source to prevent excessive scraping
-- **Timeout handling**: 10-second timeout for each HTTP request
-- **Memory efficient**: Processes reviews one at a time to minimize memory usage
-
-## 🔒 Ethical Scraping
-
-This script respects website terms of service:
-
-- ✅ Implements appropriate delays between requests
-- ✅ Uses descriptive User-Agent headers
-- ✅ Handles robots.txt indirectly through rate limiting
-- ✅ Does not overload servers
-- ✅ Extracts publicly available information only
-
-Please ensure you have permission to scrape the target websites and comply with their terms of service.
-
-## 🐛 Troubleshooting
-
-### No reviews found
-- **Cause**: Company name might not exist on the platform
-- **Solution**: Try searching manually on the platform to find the exact company name
-
-### Connection errors
-- **Cause**: Network issues or server blocking
-- **Solution**: Check your internet connection and try again later. The script implements automatic retries.
-
-### Invalid date format
-- **Cause**: Date not in YYYY-MM-DD format
-- **Solution**: Ensure dates are in the correct format (e.g., 2023-01-01)
-
-### Slow performance
-- **Cause**: Server response times
-- **Solution**: This is normal for web scraping. The script includes appropriate delays.
-
-## 📚 Dependencies
-
-| Package | Purpose |
-|---------|---------|
-| requests | HTTP requests |
-| beautifulsoup4 | HTML parsing |
-| selenium | JavaScript rendering (optional) |
-| python-dotenv | Environment variables |
-| pandas | Data manipulation |
-| lxml | HTML/XML processing |
-| webdriver-manager | Browser driver management |
-
-## 🤝 Contributing
-
-To extend this project:
-
-1. Add new scrapers by extending `BaseScraper` class
-2. Implement the `scrape()` method for your source
-3. Add the scraper to `main.py`
-
-Example:
-```python
-class NewSourceScraper(BaseScraper):
-    def scrape(self):
-        # Your scraping logic here
-        return self.reviews
-```
-
-## 📄 License
-
-This project is provided as-is for educational purposes.
-
-## 📞 Support
-
-For issues or questions:
-1. Check the troubleshooting section
-2. Review the sample output example
-3. Ensure all dependencies are installed correctly
-
-## 🚀 Future Enhancements
-
-Potential improvements:
-- Database storage for reviews
-- Advanced filtering options
-- Duplicate detection and removal
-- Sentiment analysis
-- Review trend analysis
-- Browser automation for JavaScript-heavy pages
-- Proxy support for large-scale scraping
-- API endpoints for easier integration
-
----
-
-**Last Updated**: December 2025
-**Version**: 1.0
+``
